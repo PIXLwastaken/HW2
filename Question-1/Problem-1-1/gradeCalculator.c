@@ -24,24 +24,46 @@ int main(){
     2. The input is less than 0
     3. The input is greater than 100
     If one or more are true, the input is deemed invalid and will loop until a valid input is entered
+
+    Example 1
+        Input  :  a
+        Output : "Invalid grade. Please enter a grade between 0 and 100:"
+    Example 2    
+        Input  :  -12
+        Output : "Invalid grade. Please enter a grade between 0 and 100:"
+    Example 3    
+        Input  :  103
+        Output : "Invalid grade. Please enter a grade between 0 and 100:"
     */
     while ((scanf("%f", &grade) != 1) || grade < 0 || grade > 100) {
         printf("Invalid grade. Please enter a grade between 0 and 100:\n");
         //Line 17, Suggested by Copilot (there was an infinite loop if Condition #1 was true, this fixes it):
         //Clear input buffer to handle invalid input 
-        while(getchar() != '\n' && getchar() != EOF) {
+        while(getchar() != '\n' && getchar() != EOF);
         /*
         this loop is empty because the condition in while() takes care of everything 
         getchar() reads a char input from stdin 
         so this loop essentially just reads any char in the input buffer until it encounters a new line
         or the input stream ends
         */
-        }
     }
 
     /*
-    Nested if-statements that check the range of the inputed value and print the associated letter grade
+    If-statement chain that checks the range of the inputed value and prints the associated letter grade
     with a '+' for top 3% of range, and a '-' for bottom 3% of range
+
+    Example 4
+        "Enter the numerical grade (0-100):"
+        Input  :  97
+        Output : "A+"
+    Example 5
+        "Enter the numerical grade (0-100):"
+        Input  :  85
+        Output : "B"
+    Example 6
+        "Enter the numerical grade (0-100):"
+        Input  :  72.05
+        Output : "C-"
     */
     if (grade >= 97){
         printf("A+\n");

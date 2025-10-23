@@ -14,7 +14,25 @@ Problem Description:
 */
 
 #include <stdio.h>
+#include <math.h>
+
+void fibonacciRecursive(int n){
+    //declare empty array of size n where all fibonacci numbers will be stored
+    int F[n];
+    //initialize F(0) = 0 and F(1) = 1
+    F[0] = 0;
+    F[1] = 1;
+
+    for (int i = 2; i <= n; i++){
+        F[i] = F[i-1] + F[i-2];
+        printf("%d, ", F[i]);
+    }
+}
+
+void findInFibonacci(int num){
+
+}
 
 int main(){
-    
+    fibonacciRecursive(9);
 }
