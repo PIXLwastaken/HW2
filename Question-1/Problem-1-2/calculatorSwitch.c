@@ -15,9 +15,8 @@ Problem Description:
 
 int main() {
     
-    //Declare two float variables for number a and number b, since float can handle both int and float operations
-    float a;
-    float b;
+    //Declare three double variables for number a and number b, and ans which can handle both integer and decimal inputs
+    double a, b, ans;
     /*The char "operation" can be one of the following:
     1. plus (+)
     2. minus (-)
@@ -25,56 +24,80 @@ int main() {
     4. div (/)
     5. mod (%) 
     6. exp (^)*/
-    char operation;
+    char operation, contCalc;
 
-    //The format for expression input should be: [number a] [operation] [number b])
-    printf("Enter an expression ([number a] [operation: + - / * %% ^] [number b])\nor type anything to quit:\n");
-
-    while (scanf("%f %c %f", &a, &operation, &b) == 3) {
+    do {
+        printf("Select an operation:\n[ + - * / %% ^ ]\n");
+    /* Use a leading space to skip any leftover whitespace/newline */
+        scanf(" %c", &operation);
         
+        printf("Enter your first number\n");
+        scanf("%lf", &a);
+
+        printf("Enter your second number\n");
+        scanf("%lf", &b);
+
         switch (operation) {
-        
             case '+':
-                printf("Result: %.2f\n", a + b);
+                ans = a + b;
+                printf("\n%.2lf %c %.2lf = %.2lf\n", a, operation, b, ans);
                 break;
-            
+
             case '-':
-                printf("Result: %.2f\n", a - b);
+                ans = a - b;
+                printf("\n%.2lf %c %.2lf = %.2lf\n", a, operation, b, ans);
                 break;
-            
+
             case '*':
-                printf("Result: %.2f\n", a * b);
+                ans = a * b;
+                printf("\n%.2lf %c %.2lf = %.2lf\n", a, operation, b, ans);
                 break;
 
             case '/':
                 if (b != 0) {
-                    printf("Result: %.2f\n", a / b);
+                    ans = a / b;
+                    printf("\n%.2lf %c %.2lf = %.2lf\n", a, operation, b, ans);
                 } else {
-                    printf("Error: Division by zero.\n");
+                    printf("Undefined: Division by 0\n");
                 }
                 break;
 
             case '%':
                 if ((int)b != 0) {
-                    printf("Result: %d\n", (int)a % (int)b);
+                    ans = (int)a % (int)b;
+                    printf("\n%.2lf %c %.2lf = %.2lf\n", a, operation, b, ans);
                 } else {
-                    printf("Error: Division by zero.\n");
+                    printf("Undefined: Division by 0\n");
                 }
                 break;
-            
-            case '^': {
-                float result = 1.0;
-                for (int i = 0; i < (int)b; i++) {
-                    result *= a;
+
+            case '^': 
+                ans = 1.0;
+                //check for nagetive exponent
+                if (b < 0){
+                    b = -b; //if b is negative, make it positive and run normal exponentiation
+                    for (int i = 0; i < b; i++){    
+                        ans *= a;
+                    }
+                    //print the reciprocal of ans (1/ans), as thats what a negative exponent means
+                    printf("\n%.2lf %c %.2lf = %.2lf\n", a, operation, b, (1 / ans));
+                } else {
+                    for (int i = 0; i < b; i++){    
+                        ans *= a;
+                    }
+                    printf("\n%.2lf %c %.2lf = %.2lf\n", a, operation, b, ans);
                 }
-                printf("Result: %.2f\n", result);
                 break;
-            }
             
             default:
-                printf("Error: Unknown operation '%c'.\n", operation);
+                printf("Invalid operation\nSelect an operation:\n[ + - * / %% ^ ]\n");
         }
-        printf("\nEnter an expression ([number a] [operation:  + - / * %% ^] [number b])\nor type anything to quit:\n");
-    }
+        
+    printf("Continue Calculator?\t(y/n)\n");
+    /* leading space so input ignores leftover newline */
+    scanf(" %c", &contCalc);
 
+    } while (contCalc == 'y' || contCalc == 'Y');
+
+    printf("Thank you for using the calculator!\n");
 }
