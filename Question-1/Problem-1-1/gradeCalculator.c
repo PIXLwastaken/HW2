@@ -39,7 +39,8 @@ int main(){
         printf("Invalid grade. Please enter a grade between 0 and 100:\n");
         //Line 17, Suggested by Copilot (there was an infinite loop if Condition #1 was true, this fixes it):
         //Clear input buffer to handle invalid input 
-        while(getchar() != '\n' && getchar() != EOF);
+        int c;
+        while((c = getchar()) != '\n' && c != EOF);
         /*
         this loop is empty because the condition in while() takes care of everything 
         getchar() reads a char input from stdin 

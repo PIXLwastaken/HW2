@@ -27,15 +27,28 @@ int main() {
     char operation, contCalc;
 
     do {
+        //input validation for all as explained in gradeCalculator.c
         printf("Select an operation:\n[ + - * / %% ^ ]\n");
-    /* Use a leading space to skip any leftover whitespace/newline */
-        scanf(" %c", &operation);
+        /* Use a leading space to skip any leftover whitespace/newline */
+        while(scanf(" %c", &operation) != 1){
+            printf("Invalid input. Please select an operation:\n[ + - * / %% ^ ]\n");
+            int c;
+            while((c = getchar()) != '\n' && c != EOF);
+        }
         
-        printf("Enter your first number\n");
-        scanf("%lf", &a);
+        printf("Enter your first number:\n");
+        while(scanf("%lf", &a) != 1){
+            printf("Invalid input. Enter your first number:\n");
+            int c;
+            while((c = getchar()) != '\n' && c != EOF);
+        }
 
-        printf("Enter your second number\n");
-        scanf("%lf", &b);
+        printf("Enter your second number:\n");
+        while(scanf("%lf", &b) != 1){
+            printf("Invalid Input. Enter your second number:\n");
+            int c;
+            while((c = getchar()) != '\n' && c != EOF);
+        }
 
         switch (operation) {
             case '+':

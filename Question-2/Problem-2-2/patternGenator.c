@@ -36,7 +36,8 @@ int main(){
     while (scanf(" %c", &choice) != 1 || (choice != 'A' && choice != 'a' && choice != 'B' && choice != 'b')) {
         //If either condition is true, then prompt for input again and clear the input buffer
         printf("Invalid input. Please select a pattern to generate:\nA) Diamond\tB) Number Pyramid\n");
-        while(getchar() != '\n' && getchar() != EOF);
+        int c;
+        while((c = getchar()) != '\n' && c != EOF);
     }
 
     //If the input is 'a' OR 'A', then print the diamond
