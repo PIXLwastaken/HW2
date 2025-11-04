@@ -25,15 +25,10 @@ int main(){
     3. The input is greater than 100
     If one or more are true, the input is deemed invalid and will loop until a valid input is entered
 
-    Example 1
-        Input  :  a
-        Output : "Invalid grade. Please enter a grade between 0 and 100:"
-    Example 2    
-        Input  :  -12
-        Output : "Invalid grade. Please enter a grade between 0 and 100:"
-    Example 3    
-        Input  :  103
-        Output : "Invalid grade. Please enter a grade between 0 and 100:"
+    Example   
+        "Enter the numerical grade (0-100):"
+        Input  :  98
+        Output :  A+
     */
     while ((scanf("%f", &grade) != 1) || grade < 0 || grade > 100) {
         printf("Invalid grade. Please enter a grade between 0 and 100:\n");

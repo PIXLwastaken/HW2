@@ -70,6 +70,22 @@ void sieveOfEratosthenes(int n){
 int main(){
     int n;
 
+    /*
+    Example
+    "Enter a number to look for primes from 1 to n"
+    Input  :  100
+    Output :  
+    ---------------------------------------------------------------------------------
+    |     2 |     3 |     5 |     7 |    11 |    13 |    17 |    19 |    23 |    29 |
+    ---------------------------------------------------------------------------------
+    |    31 |    37 |    41 |    43 |    47 |    53 |    59 |    61 |    67 |    71 |
+    ---------------------------------------------------------------------------------
+    |    73 |    79 |    83 |    89 |    97 |
+    ---------------------------------------------------------------------------------
+    Number of primes found: 25
+    Time elapsed: 0.000029
+    */
+
     printf("Enter a number to look for primes from 1 to n:\n");
     //input validation
     while(scanf("%d", &n) != 1){
@@ -85,3 +101,4 @@ int main(){
     double delta = (double) (end - start) / CLOCKS_PER_SEC;
     printf("Time elapsed: %lf\n", delta);
 }
+

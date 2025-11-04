@@ -143,3 +143,40 @@ int main(){
     sleep(1);
     goldenRatio(20);
 }
+
+/*
+Example
+    Output  :
+        The first 10 Fibonacci Numbers are:
+        0 1 1 2 3 5 8 13 21 34 
+    "Enter a number to compute the sum of even Fibonacci numbers below it."
+    "limit =" 
+    Input  :  100
+    Output :  The sum of even Fibonacci Numbers below 100 is:
+    Input  :  188
+    "Enter a number to determine if it is in the Fibonacci sequence."
+    "n =" 
+    Input  :  233
+    Output :  "233 IS in the Fibonacci sequence"    
+    Output :
+        "The Golden Ratio approximation will now be displayed: 
+        F[2] = 1, F[1] = 1, ratio = 1.000000
+        F[3] = 2, F[2] = 1, ratio = 2.000000
+        F[4] = 3, F[3] = 2, ratio = 1.500000
+        F[5] = 5, F[4] = 3, ratio = 1.666667
+        F[6] = 8, F[5] = 5, ratio = 1.600000
+        F[7] = 13, F[6] = 8, ratio = 1.625000
+        F[8] = 21, F[7] = 13, ratio = 1.615385
+        F[9] = 34, F[8] = 21, ratio = 1.619048
+        F[10] = 55, F[9] = 34, ratio = 1.617647
+        F[11] = 89, F[10] = 55, ratio = 1.618182
+        F[12] = 144, F[11] = 89, ratio = 1.617978
+        F[13] = 233, F[12] = 144, ratio = 1.618056
+        F[14] = 377, F[13] = 233, ratio = 1.618026
+        F[15] = 610, F[14] = 377, ratio = 1.618037
+        F[16] = 987, F[15] = 610, ratio = 1.618033
+        F[17] = 1597, F[16] = 987, ratio = 1.618034
+        F[18] = 2584, F[17] = 1597, ratio = 1.618034
+        F[19] = 4181, F[18] = 2584, ratio = 1.618034
+        F[20] = 6765, F[19] = 4181, ratio = 1.618034"
+*/

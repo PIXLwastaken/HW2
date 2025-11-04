@@ -39,6 +39,7 @@ int main(){
         int c;
         while((c = getchar()) != '\n' && c != EOF);
     }
+    
 
     //If the input is 'a' OR 'A', then print the diamond
     if (choice == 'a' || choice == 'A') {

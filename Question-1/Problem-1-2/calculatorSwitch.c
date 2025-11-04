@@ -50,6 +50,17 @@ int main() {
             while((c = getchar()) != '\n' && c != EOF);
         }
 
+        /*
+        Example 
+            "Select an operation:\n[ + - * / %% ^ ]"
+            Input  :  +
+            "Enter your first number:"
+            Input  :  5
+            "Enter your second number:"
+            Input  :  5
+            Output :  10
+        */
+
         switch (operation) {
             case '+':
                 ans = a + b;
