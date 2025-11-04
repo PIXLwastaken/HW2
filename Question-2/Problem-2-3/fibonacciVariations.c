@@ -120,7 +120,7 @@ int main(){
     //prompt the user for a limit to compute the sum of even Fibonacci numbers below that limit 
     printf("Enter a number to compute the sum of even Fibonacci numbers below it.\nlimit = ");
     //Make sure the input is an integer
-    while (scanf("%d", &sumN) != 1){
+    while (scanf("%d", &sumN) != 1 || sumN < 1){
         printf("Invalid Input\nNumber must be an integer.\nn = ");
         //clear input buffer after invalid input
         int c;
@@ -131,7 +131,7 @@ int main(){
     //prompt the user for a number n to find in the fibonacci sequence
     printf("Enter a number to determine if it is in the Fibonacci sequence.\nn = ");
     //Make sure the input is an integer
-    while (scanf("%d", &findN) != 1){
+    while (scanf("%d", &findN) != 1 || findN < 1){
         printf("Invalid Input\nNumber must be an integer.\nn = ");
         //clear input buffer after invalid input
         int c;

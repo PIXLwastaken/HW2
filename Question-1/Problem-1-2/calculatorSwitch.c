@@ -30,7 +30,9 @@ int main() {
         //input validation for all as explained in gradeCalculator.c
         printf("Select an operation:\n[ + - * / %% ^ ]\n");
         /* Use a leading space to skip any leftover whitespace/newline */
-        while(scanf(" %c", &operation) != 1){
+        while (scanf(" %c", &operation) != 1 ||
+               (operation != '+' && operation != '-' && operation != '*' &&
+                operation != '/' && operation != '%' && operation != '^')) {
             printf("Invalid input. Please select an operation:\n[ + - * / %% ^ ]\n");
             int c;
             while((c = getchar()) != '\n' && c != EOF);

@@ -88,7 +88,7 @@ int main(){
 
     printf("Enter a number to look for primes from 1 to n:\n");
     //input validation
-    while(scanf("%d", &n) != 1){
+    while(scanf("%d", &n) != 1 || n < 1){
         printf("Invalid Input. Enter an integer to look for primes from 1 to n:\n");
         int c;
         while((c = getchar()) != '\n' && c != EOF);
